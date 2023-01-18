@@ -1,0 +1,35 @@
+# 1. Create a table (student) with 3 columns (rollno, name, course).
+
+> reate table student (rollno int,name text,course text);
+# 2. Insert records for 4 students.
+
+> insert into student values(1,'Rahul','FYBSC'),(2,'Saurav','FYBA'),(3,'Niket','TYIT'),(4,'Narendra','TYBCOM');
+# 3. Write a Select query to fetch all the students.
+
+> select * from student;
+# 4. Update the student name of rollno 3 with ‘Mohan’
+
+> update student set name = 'Mohan' where rollno = 3;
+# 5. Delete any student from table with their rollno.
+
+> delete from student where rollno = 4;
+# 6. Delete all the data from student table.
+
+> elete from student where rollno in (1,2,3);
+# 7. Drop the student table
+
+> drop table student;
+# 8. Create Courses table (cid, cname) where cid is a primary key and Student table
+(rollno, name, cid) where rollno is a primary key and cid is a foreign key.
+
+> ceate table course (cid int,cname text,primary key(cid));
+> create table student (roll_no int,name text,cid int,primary key(roll_no),constraint student foreign key(cid)re
+ferences course(cid));
+# 9. Insert data in both the tables.
+
+>insert into course values(1,'python'),(2,'java'),(3,'ruby'),(4,'c++'),(5,'python'),(6,'java'),(7,'python');
+>insert into student values(01,'Saurav',1),(02,'Niket',2),(03,'Rahul',3),(04,'Prit',4),(05,'Ansh',5),(06,'ankit
+',6),(07,'ashish',7);
+# 10. Select all the students who are doing a specific course, eg. Python.
+
+>select name from course,student where cname = 'python';
